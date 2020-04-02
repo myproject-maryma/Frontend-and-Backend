@@ -1,0 +1,34 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <title>Mineem </title>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="container">
+    {% for menu in menus %}
+        <h1 style="text-align: center"><strong>{{ menu.name }}</strong></h1>
+        <div style="display: inline-block">
+
+            {% for recipe in menu.recipes.all %}
+                <div style="width: 300px;display: inline-block;margin-left: 30px;"><h2
+                        >{{ recipe.name }}</h2>
+                </div>
+
+            {% endfor %}
+        </div>
+
+    {% endfor %}
+</div>
+</body>
+</html>

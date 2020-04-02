@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Taco Recipe</title>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style type="text/css">
+        address {
+            margin-bottom: .3em;
+        }
+
+        .margin-bottom {
+            margin-bottom: 1em;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h3>Taco Recipe</h3>
+    <div class="row" id="recipe">
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" id="btn-add">
+            ADD TACO
+        </button>
+        <br>
+        <br>
+
+    </div>
+
+    <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">New Taco</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control" id="title" required >
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" required></textarea>
+                        </div>
+                        <div id="added">
+                            Added so far
+                            <div class="row"></div>
+                        </div>
+                        <div class="form-row mt-5">
+                            <div class="form-group col-sm-4">
+
+                                <input class="form-control " id="keyword" placeholder="keyword">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <select id="healthOptions" class="form-control">
+                                    <option selected value="">ALL HEALTH</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <select id="categoryOptions" class="form-control">
+                                    <option selected value="">ALL CATEGORY</option>
+                                    <option selected value="generic-foods">Generic</option>
+                                    <option selected value="generic-meals">Generic Meals</option>
+                                    <option selected value="packaged-foods">Packaged Foods</option>
+                                    <option selected value="fast-foods">Fast Foods</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary mb-2" id="searchIngredient">Search</button>
+
+                        <div class="row" id="ingredientsList">
+
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="add-data">Add Taco</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+
+
+    let ingredient_next_page = null;
+    let loading = false;
+
+    let health_options = ['alcohol-free', 'celery-free', 'crustacean-free', 'dairy-free', 'egg-free', 'fish-free', 'fodmap-free',
+        'gluten-free', 'keto-friendly', 'kidney-friendly', 'kosher', 'lupine-free', 'mustard-free', 'low-fat-abs',
+        'No-oil-added', 'low-sugar', 'paleo', 'peanut-free', 'pecatarian', 'pork-free', 'red-meat-free',
+        'sesame-free', 'shellfish-free', 'soy-free', 'sugar-conscious', 'tree-nut-free', 'vegan', 'vegetarian', 'wheat-free'];
+
+
+    function renderLi(list) {
+        let liString = '';
+        for (let i in list) {
+            liString += '<li>' + list[i] + '</li>'
+        }
+        return liString
+    }
+
+    function searchIngredientFunc(url = null, keyword, health, category) {
+        if (!url) {
+            //url = 'https://api.edamam.com/api/food-database/parser?ingr=' + keyword + '&limit=10&app_id=55955e8f&app_key=698438385185009eda1a1d0c33e6b1eb';
+            url = 'https://api.edamam.com/api/food-database/parser?ingr=' + keyword + '&limit=10&app_id=f46edfea&app_key=3404ab47a4376c9cbb3294ab4e9f22b5';
+            if (health) {
+                url = url + '&health=' + health
+            }
+            if (category) {
+                url = url + '&category=' + category
+            }
+
+        }
+        loading = true;
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            type: 'GET',
+            timeout: 20000,
+            success: function (data, status) {
+
+                console.log(data);
+                let hints = data['hints'];
+                if (data.hasOwnProperty('_links')) {
+                    console.log('datattttt')
+                    console.log(data['_links']['next']['href']);
+                    ingredient_next_page = data['_links']['next']['href'];
+
+                } else {
+                    ingredient_next_page = null;
+
+                }
+
+                for (let i in hints) {
+
+                    $('#ingredientsList').append(
+                        '<div class="col-sm-3 mt-2"><div class="card margin-bottom p-2">' +
+                        ' <img src="' + hints[i]['food']['image'] + '" alt="" style="width: 100%"> ' + '<button type="button" class="add-btn btn btn-primary btn-sm mt-2" >Add</button>' +
+                        '<div class="text-hide label">' + hints[i]['food']['label'] + '</div>' +
+                        '<div class="text-hide kcal">' + hints[i]['food']['nutrients']['ENERC_KCAL'] + '</div>' +
+                        '</div>'
+                    )
+                }
+
+                loading = false
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                if (textStatus === 'timeout') {
+                    alert('TIMEOUT');
+
+                }
+            }
+        })
+    }
+
+    $(window).bind("scroll", function () {
+        if ($(document).scrollTop() + $(window).height()
+            > $(document).height() - 10 && !isloading) {
+            console.log('loading')
+        }
+    });
+    $(document).ready(function () {
+        for (let i in health_options) {
+            $('#healthOptions').append(
+                '<option value="' + health_options[i] + '">' + health_options[i] + '</option>'
+            )
+        }
+
+        let modalBody = $('.modal-body');
+
+
+        modalBody.scroll(function () {
+            let modal_scrollTop = modalBody.scrollTop();
+            let modal_scrollHeight = modalBody.prop('scrollHeight');
+            let modal_innerHeight = modalBody.innerHeight();
+            // // Write to console log to debug:
+            console.warn('modal_scrollTop: ' + modal_scrollTop);
+            console.warn('modal_innerHeight: ' + modal_innerHeight);
+            console.warn('modal_scrollHeight: ' + modal_scrollHeight);
+
+            // Bottom reached:
+            if (modal_scrollTop + modal_innerHeight >= (modal_scrollHeight - 10)) {
+                console.log('reach bottom');
+                if (!loading) {
+                    // request new ingredient
+                    console.log(ingredient_next_page)
+                    if (ingredient_next_page) {
+                        searchIngredientFunc(ingredient_next_page)
+                    } else {
+                        // next_page does not exist,just set loading=true,then we will never load data again
+                        console.log('no more');
+                        loading = true;
+
+                    }
+                } else {
+                    console.log('loading')
+                }
+
+            }
+
+        });
+        //let url = 'https://api.edamam.com/search?app_id=beda8c7a&app_key=64853a683e7f859d5233e27652cad44e&q=tacos';
+        let url = 'https://api.edamam.com/search?app_id=8c731155&app_key=288c9981b62d7cbe8fccef0b595e3b47&q=tacos';
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            type: 'GET',
+            timeout: 20000,
+            success: function (data, status) {
+                console.log(data);
+                let recipes = data['hits'];
+                for (let i in recipes) {
+
+                    $('#recipe').append(
+                        '<div class="col-sm-4 mt-2"><div class="card margin-bottom p-2">' +
+                        ' <img src="' + recipes[i]['recipe']['image'] + '" alt=""> ' + '<strong>Name</strong>' + recipes[i]['recipe']['label'] +
+                        '<div>' + '<strong>Calories: </strong>' + recipes[i]['recipe']['calories'].toString().split('.')[0] + ' cal </div>' +
+
+                        '</div>' +
+                        '<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">' +
+                        '<div class="modal-dialog modal-dialog-scrollable" role="document">' +
+                        '<div class="modal-content">' +
+                        '<div class="modal-header">' +
+                        '<h4 class="modal-title" id="exampleModalScrollableTitle">' + recipes[i]['recipe']['label'] + '</h4>' +
+                        '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                        '<span aria-hidden="true">&times;</span>' +
+                        '</button>' +
+                        '</div>' +
+                        '<div class="modal-body">' +
+                        '<h5>Ingredients</h5>' +
+                        '<ul>' +
+                        renderLi(recipes[i]['recipe']['ingredientLines']) +
+                        '</ul>' +
+                        '</div>' +
+                        '<div class="modal-footer">' +
+                        '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+
+                        '</div>' +
+                        '</div>' +
+                        '</div>' +
+                        ' </div>' +
+                        '</div>'
+                    )
+                }
+
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                if (textStatus === 'timeout') {
+                    alert('TIMEOUT');
+
+                }
+            }
+        });
+
+        $("#recipe").on('click', '.col-sm-4', function () {
+            $(this).children('.modal').modal('show');
+        });
+        $("#recipe").on('click', '.col-sm-4 .delete', function () {
+            console.log('delete new ');
+            $(this).parents('.modal').modal('hide');
+            let col4 = $(this).parents('.col-sm-4');
+            // $(this).children('.modal').modal('show');
+            // $(this).parents('.col-sm-4').remove();
+            setTimeout(function () {
+                    console.log('timetou');
+                    col4.remove()
+                }, 500
+            );
+            $(this).parents('show').remove()
+        });
+        $("#btn-add").on('click', function () {
+            $("#addModal").modal('show');
+            $('#added .row').empty();
+            $('#title').val('');
+            $('#description').val('');
+        });
+
+        // add data to recipe list
+        $("#add-data").on('click', function () {
+
+            $("#addModal").modal('hide');
+            let title_selector = $('#title');
+            let descrip_selector = $('#description');
+            let title = title_selector.val();
+            let description = descrip_selector.val();
+            title_selector.val('');
+            descrip_selector.val('');
+            $('#ingredientsList').empty();
+            let ingredients = [];
+            $('#added .row .col-sm-3 .text-hide.label').each(function () {
+                ingredients.push($(this).text())
+            });
+            let kcal = 0;
+            $('#added .row .col-sm-3 .text-hide.kcal').each(function () {
+                kcal += parseFloat($(this).text() === 'undefined' ? 0 : $(this).text())
+            });
+            console.log(kcal);
+            $('#keyword').val('');
+            $('#recipe').append(
+                '<div class="col-sm-4 mt-2"><div class="card margin-bottom p-2">' +
+                '<img src="./img/taco.png" alt="">' + '<strong>Name</strong>' + title +
+                '<div>' + '<strong>Calories: </strong>' + kcal.toString().split('.')[0] + ' cal </div>' +
+                '</div>' +
+                '<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">' +
+                '<div class="modal-dialog modal-dialog-scrollable" role="document">' +
+                '<div class="modal-content">' +
+                '<div class="modal-header">' +
+                '<h4 class="modal-title" id="exampleModalScrollableTitle">' + title + '</h4>' +
+                '<button type="button" class="close" data-dismiss="modal" aria-label="Close">' +
+                '<span aria-hidden="true">&times;</span>' +
+                '</button>' +
+                '</div>' +
+                '<div class="modal-body">' +
+                '<h5>description</h5>' +
+                '<div>' + description + '</div>' +
+                '<h5>Ingredients</h5>' +
+                '<ul>' +
+                renderLi(ingredients) +
+                '</ul>' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                '<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>' +
+                '<button type="button" class="btn btn-danger delete">Delete</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>'
+            )
+
+        });
+
+        $("#ingredientsList").on('click', '.add-btn', function () {
+            $("#added .row").append(
+                '<div class="col-sm-3 mt-2">' + $(this).parent('div').children('img').prop("outerHTML") +
+                $(this).parent('div').children('.text-hide.label').prop("outerHTML")
+                + $(this).parent('div').children('.text-hide.kcal').prop("outerHTML") +
+                '</div>'
+            )
+        });
+        $("#searchIngredient").on('click', function () {
+            console.log('search');
+            $('#ingredientsList').empty();
+            loading = false;
+            let health = $("#healthOptions option:selected").val();
+            let category = $("#categoryOptions option:selected").val();
+            searchIngredientFunc(null, $("#keyword").val(), health, category)
+
+        });
+
+
+    })
+    ;
+</script>
+</html>

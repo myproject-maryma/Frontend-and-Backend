@@ -1,0 +1,498 @@
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzY1MzIzLCJqdGkiOiIwZTdlNzY5ZjFjZDY0MTNmOTBjNTE4NjY1NGFiNDI4MiIsInVzZXJfaWQiOjF9.-iLpebd5s6lZrM7uewDCFSOwELrCN9SsGpQicva-wgM
+
+{"name":"menu1","recipes":[1]}
+
+<> 2020-04-02T081448.201.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzY1MzIzLCJqdGkiOiIwZTdlNzY5ZjFjZDY0MTNmOTBjNTE4NjY1NGFiNDI4MiIsInVzZXJfaWQiOjF9.-iLpebd5s6lZrM7uewDCFSOwELrCN9SsGpQicva-wgM
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T081220.400.json
+
+###
+
+POST http://127.0.0.1:8000/api/auth/login?=
+Content-Type: application/json
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T080843.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxNTMyOSwianRpIjoiZWJiZDQ1ZWQwMDBlNDcwZDhhOTcyMjkxOGNlN2Q0NzEiLCJ1c2VyX2lkIjoxfQ.VALel3nWzb58Zgi0CPvm13v3UuAT7XRrDJuG1smfn-M","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzY0OTI5LCJqdGkiOiJlNTkzMzExNmM0ODQ0NzQ0ODFhODkzYjlhNGY0NDE5NCIsInVzZXJfaWQiOjF9.aZHUu-RtXLbbeJOD3FTNw9BNak0hSYtGdqo7p72IBcQ
+
+{"us{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T080421.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/auth/login?=
+Content-Type: application/json
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T080209.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T075334-1.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T075334.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T075328.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?=
+Content-Type: application/json
+Authorization: JWT {"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94"}
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T074557.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?Authorization=JWT {"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94"}
+Content-Type: application/json
+Accept: */*
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T073341.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?Authorization=JWT {"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94"}
+Content-Type: application/json
+Accept: */*
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T073255.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/menus/?Authorization=JWT {"refresh":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTU4NTkxMzE2NiwianRpIjoiNzdiODBmYjQ4ZTkwNGRkNDg3YzAyZGQxZTk1NDliYjMiLCJ1c2VyX2lkIjoxfQ.YIPa5XI87BAzBUa3pyYlqab3WrNqgSWm4OEtBbCKrJA","access":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjE3MzYyNzY2LCJqdGkiOiJlN2Q3M2ZiN2E3ZTE0ZjNiOGI5YjM4MDU0M2NmOGE4YSIsInVzZXJfaWQiOjF9.LU-22Tzigl8QXzvJ5yjRQMBBSpXm-j21tFy7r3IvM94"}
+Content-Type: application/json
+Accept: */*
+
+{"name":"menu1","recipe":[1]}
+
+<> 2020-04-02T073238.401.json
+
+###
+
+POST http://127.0.0.1:8000/api/auth/login?=
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T072822.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/auth/login?=
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T072606.200.json
+
+###
+
+PATCH http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"gs","category":1}
+
+<> 2020-04-02T072326.405.json
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"g1","category":1}
+
+<> 2020-04-02T072137.201.json
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"g1"}
+
+<> 2020-04-02T071702.201.json
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T065821-1.500.txt
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T065821.500.txt
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T065615.500.txt
+
+###
+
+PATCH http://127.0.0.1:8000/api/recipe/1/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T064901.200.json
+
+###
+
+PATCH http://127.0.0.1:8000/api/recipe/1/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T064637.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T064006.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T063650.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T063645.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T063231.500.txt
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T063204.500.txt
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T063136.500.txt
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T062427.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T061406.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T061335.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?=
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T061330.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"name":"taco","ingredients":[1]}
+
+<> 2020-04-02T061151.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/ingredient/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T060118.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/ingredient/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T055546.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/1/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T055028.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T054703.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T054432.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?category=meet
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T054037.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?category=meat
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T054022.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?ingredient=beef
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T053131.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?ingredient=beef
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T053055.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?ingredient=beef
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T053009.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/?ingredient=beef
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T052425.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-02T045335.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/ingredient/
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-01T034755.200.json
+
+###
+
+GET http://127.0.0.1:8000/api/recipe/
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-01T034613.200.json
+
+###
+
+POST http://127.0.0.1:8000/api/recipe/
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-01T034439.500.txt
+
+###
+
+POST http://127.0.0.1:8000/api/ingredient/
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-01T034301.400.json
+
+###
+
+POST http://127.0.0.1:8000/api/auth/login
+Content-Type: application/json
+Accept: */*
+
+{"username":"test","password":"123qweasd"}
+
+<> 2020-04-01T033947.200.json
+
+###
+
